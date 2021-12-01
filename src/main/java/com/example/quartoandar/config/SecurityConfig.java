@@ -10,15 +10,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Authentication : User --> Roles
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
-        auth.inMemoryAuthentication().withUser("user1").password("{noop}secret1")
-                .roles("LOCADOR").and().withUser("admin1").password("{noop}secret1")
+        auth.inMemoryAuthentication().withUser("eduardo").password("{noop}1234")
+                .roles("LOCATARIO").and().withUser("edi").password("{noop}4321")
                 .roles("LOCADOR", "LOCATARIO");
     }
 
     // Authorization : Role -> Access
     protected void configure(HttpSecurity http) throws Exception {
-        http.httpBasic().and().authorizeRequests().antMatchers("/users/**")
-                .hasRole("LOCADOR").antMatchers("/**").hasRole("LOCATARIO").and()
+        http.httpBasic().and().authorizeRequests().antMatchers("/users/**","/estates")
+                .hasRole("LOCATARIO").antMatchers("/**").hasRole("LOCADOR").and()
                 .csrf().disable().headers().frameOptions().disable();
     }
 

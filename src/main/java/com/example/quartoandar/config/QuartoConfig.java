@@ -28,7 +28,7 @@ public class QuartoConfig implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         User u1 = new User(null,"Edi","edi@gmail","0111111","12345", TipoUsuario.LOCADOR);
-        User u2 = new User(null,"Iuri","i@gmail","0111111","12345",TipoUsuario.LOCATARIO);
+        User u2 = new User(null,"Eduardo","edu@gmail","0111111","12345",TipoUsuario.LOCATARIO);
 
         Estate e1 = new Estate(null,"Ap centro Poa",EstateType.APARTAMENTO,"Porto Alegre",44);
         Estate e2 = new Estate(null,"Casa Menino Deus",EstateType.CASA,"Porto Alegre",110);

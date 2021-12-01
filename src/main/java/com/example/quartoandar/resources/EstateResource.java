@@ -27,7 +27,7 @@ public class EstateResource {
         return estateRepository.findByEstateType(tipo);
     }
 
-    @PostMapping()
+    @PostMapping("/novoImovel")
     public ResponseEntity<Estate> saveEstate(@RequestBody Estate estate) {
         return new ResponseEntity<>(estateRepository.save(estate), HttpStatus.CREATED);
     }
