@@ -32,4 +32,10 @@ public class EstateResource {
         return new ResponseEntity<>(estateRepository.save(estate), HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        estateRepository.deleteById(id);
+        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }
