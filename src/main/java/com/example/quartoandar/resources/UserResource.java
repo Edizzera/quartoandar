@@ -32,6 +32,10 @@ public class UserResource {
     public ResponseEntity<User> save(@RequestBody User user) {
         return new ResponseEntity<>(service.save(user),HttpStatus.CREATED);
     }
+    @DeleteMapping
+    public void deletah(){
+        service.deleteTuto();
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {

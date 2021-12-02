@@ -3,6 +3,7 @@ package com.example.quartoandar.resources;
 import com.example.quartoandar.entities.Estate;
 import com.example.quartoandar.entities.enums.EstateType;
 import com.example.quartoandar.repositories.EstateRepository;
+import com.example.quartoandar.services.EstatesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,26 +16,29 @@ import java.util.List;
 public class EstateResource {
 
     @Autowired
-    EstateRepository estateRepository;
+    EstatesService estatesService;
+
+
 
     @GetMapping
     public List<Estate> findAll() {
-        return estateRepository.findAll();
+        return estatesService.encontraTodos();
     }
+
 
     @GetMapping("/tipo")
     public List<Estate> findByEstateType(@RequestParam EstateType tipo){
-        return estateRepository.findByEstateType(tipo);
+        return estatesService.encontraPeloTipo(tipo);
     }
 
     @PostMapping("/novoImovel")
     public ResponseEntity<Estate> saveEstate(@RequestBody Estate estate) {
-        return new ResponseEntity<>(estateRepository.save(estate), HttpStatus.CREATED);
+        return new ResponseEntity<>(estatesService.salvarNovoImovel(estate), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
-        estateRepository.deleteById(id);
+        estatesService.deletaImovel(id);
         return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

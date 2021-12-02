@@ -10,7 +10,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Authentication : User --> Roles
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
-        auth.inMemoryAuthentication().withUser("eduardo").password("{noop}1234")
+        auth. inMemoryAuthentication().withUser("eduardo").password("{noop}1234")
                 .roles("LOCATARIO").and().withUser("edi").password("{noop}4321")
                 .roles("LOCADOR", "LOCATARIO");
     }

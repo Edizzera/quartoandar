@@ -19,17 +19,34 @@ public class UserService {
         return repository.findAll();
     }
 
+    public boolean veryUser(User user) {
+       List<User>users = repository.findAll();
+       for(User u : users){
+           if(u.getCpf().equals(user.getCpf())){
+               return false;
+           }
+       }
+       return true;
+
+    }
+
     public User findById(Long id) {
         Optional<User> obj = repository.findById(id);
         return obj.get();
     }
 
     public User save(User user) {
+        if(veryUser(user)) {
+            return repository.save(user);
+        }
 
-        return repository.save(user);
+        return user;
     }
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+    public void deleteTuto(){
+        repository.deleteAll();
     }
 }
