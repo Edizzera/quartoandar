@@ -18,18 +18,23 @@ public class User implements Serializable {
     private String email;
     private String cpf;
     private String password;
-    private TipoUsuario tipoUsuario;
+    private String role;
+
+//    @Enumerated(EnumType.STRING)
+//    private TipoUsuario tipoUsuario;
 
     public User(){};
 
-    public User(Long id, String nome, String email, String cpf, String password, TipoUsuario tipoUsuario) {
+    public User(Long id, String nome, String email, String cpf, String password, String role) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.password = password;
-        this.tipoUsuario = tipoUsuario;
+        this.role = role;
+//        this.tipoUsuario = tipoUsuario;
     }
+
 
     public Long getId() {
         return id;
@@ -71,12 +76,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
+//    public TipoUsuario getTipoUsuario() {
+//        return tipoUsuario;
+//    }
+//
+//    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+//        this.tipoUsuario = tipoUsuario;
+//    }
+
+    public String getRole() {
+        return role;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

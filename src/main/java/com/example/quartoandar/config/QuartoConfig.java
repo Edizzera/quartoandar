@@ -27,16 +27,16 @@ public class QuartoConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        User u1 = new User(null,"Edi","edi@gmail","0111111","12345", TipoUsuario.LOCADOR);
-        User u2 = new User(null,"Eduardo","edu@gmail","0111111","12345",TipoUsuario.LOCATARIO);
+//        User u1 = new User(null,"iuri","edi@gmail","0111111","$2a$12$sp2hASRQ2wKw3XE3.jmkxuTNHCpLaKvIIbp5GniuKmVymlXC09dzq", "LOCATARIO");
+//        User u2 = new User(null,"Helena","edu@gmail","0111111","$2a$12$sp2hASRQ2wKw3XE3.jmkxuTNHCpLaKvIIbp5GniuKmVymlXC09dzq","LOCADOR");
 
-        Estate e1 = new Estate(null,"Ap centro Poa",EstateType.APARTAMENTO,"Porto Alegre",44);
-        Estate e2 = new Estate(null,"Casa Menino Deus",EstateType.CASA,"Porto Alegre",110);
-        Estate e3 = new Estate(null,"Casa Moinhos de Vento",EstateType.CASA,"Porto Alegre",440);
+//        Estate e1 = new Estate(null,"Ap centro Poa",EstateType.APARTAMENTO,"Porto Alegre",44);
+//        Estate e2 = new Estate(null,"Casa Menino Deus",EstateType.CASA,"Porto Alegre",110);
+//        Estate e3 = new Estate(null,"Casa Moinhos de Vento",EstateType.CASA,"Porto Alegre",440);
+//
 
-
-        userRepository.saveAll(Arrays.asList(u1,u2));
-        estateRepository.saveAll(Arrays.asList(e1,e2,e3));
+//        userRepository.saveAll(Arrays.asList(u1,u2));
+//        estateRepository.saveAll(Arrays.asList(e1,e2,e3));
 
     }
 }

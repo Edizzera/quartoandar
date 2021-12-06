@@ -27,7 +27,6 @@ public class UserService {
            }
        }
        return true;
-
     }
 
     public User findById(Long id) {
@@ -39,7 +38,6 @@ public class UserService {
         if(veryUser(user)) {
             return repository.save(user);
         }
-
         return user;
     }
 
